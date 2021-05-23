@@ -1,6 +1,7 @@
 backend:
   # Use netlify identity as backend
   name: git-gateway
+  repo: rajibchisim/eleventy-site
   branch: master
 
 media_folder: "assets"
