@@ -21,7 +21,11 @@ module.exports = (eleventyConfig) => {
     
     eleventyConfig.addShortcode('version', function(){ return now })
     
-    eleventyConfig.addPassthroughCopy("assets")
+    eleventyConfig.addPassthroughCopy()
+    eleventyConfig.addPassthroughCopy({
+      "assets": "assets",
+      "src/admin/config.yml": "admin/config.yml",
+    })
     
     return {
       // markdownTemplateEngine: 'liquid',
