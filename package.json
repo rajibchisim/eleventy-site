@@ -11,7 +11,11 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
-    "liquidjs": "^9.25.0"
+    "liquidjs": "^9.25.0",
+    "netlify-cli": "^3.30.4"
   },
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "netlify-cms-app": "^2.15.11"
+  }
 }

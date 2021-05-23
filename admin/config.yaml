@@ -1,0 +1,4 @@
+backend:
+  # Use netlify identity as backend
+  name: git-gateway
+  branch: master
