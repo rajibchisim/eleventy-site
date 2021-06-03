@@ -237,13 +237,14 @@ module.exports = {
       DEFAULT: '1',
     },
     fontFamily: {
+      roboto: ['Roboto', 'sans-serif'],
       sans: [
+        'Roboto',
         'ui-sans-serif',
         'system-ui',
         '-apple-system',
         'BlinkMacSystemFont',
         '"Segoe UI"',
-        'Roboto',
         '"Helvetica Neue"',
         'Arial',
         '"Noto Sans"',
@@ -264,7 +265,6 @@ module.exports = {
         '"Courier New"',
         'monospace',
       ],
-      roboto: ['Roboto', 'sans-serif']
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],

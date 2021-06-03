@@ -35,6 +35,12 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
 
     <script>
+        new Glide('#hero-slide', {
+            perView: 1,
+            type: 'slide',
+            gap: 0,
+            type: 'carousel',
+        }).mount()
         new Glide('.glide', {
             perView: 3,
             type: 'carousel',

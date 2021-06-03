@@ -2,6 +2,20 @@
 title: 'Home'
 layout: 'base'
 
+herosliders:
+  - title: We Are Digital Product Design Agency.
+    body: Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    image: '/assets/img/background_1.webp'
+  - title: We Are Digital Product Design Agency.
+    body: Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    image: '/assets/img/background_2.webp'
+  - title: We Are Digital Product Design Agency.
+    body: Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    image: '/assets/img/background_3.webp'
+  - title: We Are Digital Product Design Agency.
+    body: Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    image: '/assets/img/background_4.webp'
+
 services:
   - title: Video Making
     body: Make standout videos in a snap with the Biteable video maker. Sparkle with studio-quality animation, footage, and effects. Start now, share in minutes.
@@ -66,7 +80,7 @@ testimonials:
     role: Designer
 ---
 
-
+{% render 'partials/slider' sliders:herosliders %}
 {% render 'partials/our-service' services:services %}
 {% render 'partials/latest-work' portfolios:latestWork %}
 {% render 'partials/faq' faqs:faqs %}
