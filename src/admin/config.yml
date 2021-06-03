@@ -1,7 +1,8 @@
 backend:
   # Use netlify identity as backend
-  name: git-gateway
+  name: proxy
   repo: rajibchisim/eleventy-site
+  proxy_url: http://localhost:8081/api/v1
   branch: master
 
 media_folder: "assets"

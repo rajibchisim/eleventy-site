@@ -1,0 +1,28 @@
+<div class="text-gray-700 bg-indigo-100 bg-opacity-25">
+    <div class="container py-16 mx-auto">
+        {% render 'partials/section-header'
+        title: 'Frequently Asked Questions',
+        excerpt: 'Malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.' %}
+        <div class="flex">
+            <div x-data="{ isExpanded: 0 }" class="w-1/2">
+                {% for faq in faqs %}
+                <div class="mb-3 bg-white rounded"
+                    x-data="{ itemId:{{ forloop.index }}, $this: 'ans'+{{ forloop.index }} }"
+                    x-bind:class="$parent.isExpanded ==  itemId ? 'bg-blue-400 text-white' : ''">
+                    <h4 class="p-4" x-on:click=" $parent.isExpanded = itemId ">
+                        <i class="mr-2 text-xl fa" 
+                        x-bind:class=" $parent.isExpanded == itemId ? 'fa-minus-circle' : 'fa-plus-circle' "></i>{{ faq.que }}
+                    </h4>
+                    <div :x-ref="$this" class="overflow-hidden transition-all max-h-0" 
+                    x-bind:style="`max-height: ${$parent.isExpanded == itemId ?  $refs[$this].scrollHeight : '0'}px;`">
+                        <p class="p-4">{{ faq.ans }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="w-1/2">
+                <div class="px-16 w-96"><img src="{{ 'assets/img/fag-img.png' | url }}" class="w-full" alt="faq"></div>
+            </div>
+        </div>
+    </div>
+</div>

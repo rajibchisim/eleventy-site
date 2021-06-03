@@ -1,0 +1,60 @@
+<header class="bg-gray-800">
+    <div class="container mx-auto">
+        <div class="flex items-center justify-between text-gray-200">
+            <div class="py-2">
+                <a href="{{ '/' | url }}" class="logo">
+                    <img class="w-16" src="{{ '/assets/img/logo.webp' | url }}" alt="logo">
+                </a>
+            </div>
+            <div class="flex">
+                <div class="flex items-center order-1">
+                    <div class="relative" x-data="{ show: false }" x-on:click.away="show = false">
+                        <span class="p-3 fa fa-search" x-on:click="show = !show"></span>
+                        <form x-show="show" action="#" class="absolute left-0 flex py-2 transform -translate-x-full -translate-y-1/2 bg-white border rounded-md top-1/2">
+                            <input class="ml-3 text-gray-800 outline-none" type="search" placeholder="search now">
+                            <button type="submit"><i class="mx-2 fa fa-search"></i></button>
+                        </form>
+                    </div>
+                    <div>
+                        <a href="#" class="p-3 fa fa-facebook"></a>
+                        <a href="#" class="p-3 fa fa-twitter"></a>
+                        <a href="#" class="p-3 fa fa-github"></a>
+                    </div>
+                </div>
+                <nav class="hidden lg:block">
+                    <ul class="flex text-base font-bold">
+                        <li class="px-5 py-2">
+                            <a href="/">Home</a>
+                        </li>
+                        <li class="px-5 py-2">
+                            <a href="/">About</a>
+                        </li>
+                        <li class="px-5 py-2">
+                            <a href="/">Services</a>
+                        </li>
+                        <!-- <li><a href="/about">About</a></li> -->
+                        <!-- <li class="has-child">
+                            <a href="#">Pages</a>
+                            <ul class="sub-menu">
+                                <li><a href="404.html">404</a></li>
+                                <li><a href="/about">About</a></li>
+                                <li><a href="/career">Career</a></li>
+                                <li><a href="/coming-soon">Coming Soon</a></li>
+                                <li><a href="/contact">Contact</a></li>
+                                <li><a href="/faq">Faq</a></li>
+                                <li><a href="/portfolio">Portfolio</a></li>
+                                <li><a href="/pricing">Pricing</a></li>
+                                <li><a href="/service">Service</a></li>
+                                <li><a href="/team">Team</a></li>
+                                <li><a href="/testimonial">Testimonial</a></li>
+                            </ul>
+                        </li> -->
+                        <!-- <li><a href="/services">Services</a></li> -->
+                        <!-- <li><a href="/testimonials">Testimonials</a></li> -->
+                        <!-- <li><a href="/contact">Contact</a></li> -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
