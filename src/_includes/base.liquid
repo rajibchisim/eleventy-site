@@ -1,3 +1,15 @@
+---
+recentPosts:
+  - title: Curling irons are as individual as the women
+    image: /assets/img/recent1.jpg
+    published_at: 2021-05-20T18:06:32.803Z
+  - title: Curling irons are as individual as the women
+    image: /assets/img/recent1.jpg
+    published_at: 2021-05-15T18:06:32.803Z
+  - title: Curling irons are as individual as the women
+    image: /assets/img/recent1.jpg
+    published_at: 2021-05-10T18:06:32.803Z
+---
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,11 +34,11 @@
         <span class="preloader-spin"></span>
     </div>
     <div class="site">
-        {% render 'partials/main-nav' %}   
+        {% render 'partials/main-nav' navLinks: navigation.items %}   
         
         {{ content }}
         
-        {% render 'partials/footer' %}
+        {% render 'partials/footer', recentPosts: recentPosts %}
         
     </div>
 
@@ -35,16 +47,23 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
 
     <script>
-        new Glide('#hero-slide', {
-            perView: 1,
-            type: 'slide',
-            gap: 0,
-            type: 'carousel',
-        }).mount()
-        new Glide('.glide', {
-            perView: 3,
-            type: 'carousel',
-        }).mount()
+        if(document.getElementById('hero-slide')) {
+            console.log('Hero slide found');
+            new Glide('#hero-slide', {
+                perView: 1,
+                gap: 0,
+                type: 'carousel',
+            }).mount()
+        }
+        if(document.querySelector('.glide')) {
+            new Glide('.glide', {
+                perView: 3,
+                type: 'carousel',   
+                breakpoints: {
+                    1023: { perView: 1, controls: false }
+                },             
+            }).mount()
+        }
         
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {

@@ -1,4 +1,6 @@
 const now = String(Date.now())
+const yaml = require("js-yaml")
+
 
 module.exports = (eleventyConfig) => {
     const {Liquid} = require("liquidjs");
@@ -9,6 +11,7 @@ module.exports = (eleventyConfig) => {
       root: ["_includes"]
     };
     eleventyConfig.setLibrary("liquid", new Liquid(options));
+    eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
   
     eleventyConfig.addFilter("eleventy_version", () => require("@11ty/eleventy/package.json").version);
     eleventyConfig.addFilter("liquid_version", () => require("liquidjs/package.json").version);

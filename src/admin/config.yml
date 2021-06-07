@@ -24,6 +24,7 @@ collections:
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Slug", name: "slug", widget: "string"}
       - widget: select
         label: "tags"
         name: "tags"
@@ -35,14 +36,14 @@ collections:
     editor:
       preview: false
     files:
-      - label: "Navigation"
+      - label: "Main Navigation"
         name: "items"
         file: "src/_data/navigation.yaml"
         fields:
-          - label: Nav Items
+          - label: Nav Links
             name: items
             widget: list
-            allow_add: false
+            allow_add: true
             collapsed: false
             fields:
               - { label: Title, name: text, widget: string }
@@ -63,6 +64,29 @@ collections:
         name: "settings"
         file: "src/_data/settings.yaml"
         fields:
-          - { label: Name, name: name, widget: string }
-          - { label: Author, name: author, widget: string }
-          - { label: URL, name: url, widget: string }
+          - { label: Phone, name: phone, widget: string }
+          - { label: Email, name: email, widget: string }
+          - { label: Address, name: address, widget: string }
+          - { label: Google map, name: gmap, widget: string }
+          - label: Socials
+            name: socials 
+            widget: list
+            allow_add: true
+            fields:
+              - { label: Platform, name: name, widget: select, options: ['facebook', twitter, 'linkedin'] }
+              - { label: Url, name: url, widget: string }
+  - label: Services
+    name: services
+    files: 
+      - label: Edit/add Services
+        name: items
+        file: "src/_data/services.yaml"
+        fields:
+          - name: items
+            label: Services
+            widget: list
+            allow_add: true
+            fields:
+              - { label: Name, name: title, widget: string }
+              - { label: Description, name: body, widget: string }
+              - { label: FontAwesome Icon 4.7, name: icon, widget: string }

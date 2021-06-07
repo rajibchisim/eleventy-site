@@ -2,3 +2,18 @@
 
 @import "../../node_modules/@glidejs/glide/dist/css/glide.core.css";
 @import "../../node_modules/@glidejs/glide/dist/css/glide.theme.css";
+
+.glide__arrow_override {
+    display: none;
+}
+
+.sp-bg {
+    background-color: red;
+    color: green;
+}
+
+@media (min-width: 1024px) {
+    .glide__arrow_override {
+        display: block;
+    }
+}

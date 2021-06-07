@@ -3,6 +3,7 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   purge: [
     './src/**/*.html',
+    './src/**/*.liquid',
     './src/**/*.js',
   ],
   presets: [],
@@ -963,5 +964,7 @@ module.exports = {
     wordBreak: ['responsive'],
     zIndex: ['responsive', 'focus-within', 'focus'],
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

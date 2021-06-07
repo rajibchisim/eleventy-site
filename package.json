@@ -3,17 +3,23 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all --parallel eleventy style",
-    "eleventy": "eleventy --serve",
+    "start": "npm-run-all --parallel eleventy style browsersync",
+    "eleventy": "eleventy --watch",
+    "debug": "DEBUG=Eleventy* eleventy && style",
     "style": "postcss ./src/styles/main.css --o ./_site/assets/css/main.css --watch",
-    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production"
+    "browsersync": "browser-sync start --server '_site' --files '_site' --port 8080 --no-notify --no-open",
+    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss ./src/styles/main.css --o ./_site/assets/css/main.css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
+    "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.2.6",
+    "cssnano": "^5.0.5",
+    "html-minifier": "^4.0.0",
+    "js-yaml": "^4.1.0",
     "liquidjs": "^9.25.0",
     "netlify-cli": "^3.30.4",
     "npm-run-all": "^4.1.5",

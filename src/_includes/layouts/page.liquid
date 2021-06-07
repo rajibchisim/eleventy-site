@@ -1,14 +1,14 @@
-{% layout 'base' %} 
+---
+layout: base
+---
 
-{% block 'maincontent' %}
-
-<div class="page-title sp" style="background-image: url(/assets/img/{{ backgroundImage }})">
-    <div class="container text-center">
-        <h2>{{ title }}</h2>
-        <p>{{ description }}</p>
+<div class="h-72" style="background-image: url(/assets/img/{{ backgroundImage }})">
+    <div class="container flex items-center h-full mx-auto text-center">
+        <div class="w-full">
+            <h2 class="text-2xl">{{ title }}</h2>
+            <p class="text-xl">{{ description }}</p>
+        </div>
     </div>
 </div>
 
-{% block 'content' %}{% endblock %}
-
-{% endblock %}
+{{ content }}

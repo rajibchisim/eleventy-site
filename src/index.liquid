@@ -15,26 +15,6 @@ herosliders:
   - title: We Are Digital Product Design Agency.
     body: Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
     image: '/assets/img/background_4.webp'
-
-services:
-  - title: Video Making
-    body: Make standout videos in a snap with the Biteable video maker. Sparkle with studio-quality animation, footage, and effects. Start now, share in minutes.
-    icon: fa-film
-  - title: Photography
-    body: Photography is the art, application, and practice of creating durable images by recording light, either electronically by means of an image sensor, or chemically ...
-    icon: fa-camera
-  - title: Music Composing
-    body: Music is the art of arranging sounds in time to produce a composition through the elements of melody, harmony, rhythm, and timbre. It is one of the universal
-    icon: fa-music
-  - title: Product Marketing
-    body: Pellentesque habitant morbi tristique senectus et netus et malesuada fames.
-    icon: fa-bullhorn
-  - title: Video Editing
-    body: The video editor is intended for editing video files and creating videos of any complexity involving various visual and audio effects.
-    icon: fa-magic 
-  - title: Presentation
-    body: A presentation conveys information from a speaker to an audience. Presentations are typically demonstrations, introduction, lecture, or speech meant to inform, persuade,inspire, motivate
-    icon: fa-bar-chart
     
 latestWork:
   - title: Very hard work
@@ -81,7 +61,7 @@ testimonials:
 ---
 
 {% render 'partials/slider' sliders:herosliders %}
-{% render 'partials/our-service' services:services %}
+{% render 'partials/our-service' services: services.items %}
 {% render 'partials/latest-work' portfolios:latestWork %}
 {% render 'partials/faq' faqs:faqs %}
 {% render 'partials/testimonial' testimonials:testimonials %}
