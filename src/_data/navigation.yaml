@@ -7,3 +7,5 @@ items:
     url: /services
   - text: Contact
     url: /contact
+  - text: Blog
+    url: /blogs

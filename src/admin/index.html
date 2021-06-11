@@ -9,5 +9,96 @@
 <body>
   <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script>
+    var CategoriesControl = createClass({
+      handleChange: function(e) {
+        const separator = this.props.field.get('separator', ', ')
+        
+        this.props.onChange(e.target.value.split(separator).map((e) => e.trim()));
+      },
+
+      render: function() {
+        const separator = this.props.field.get('separator', ', ');
+        var value = this.props.value;
+        console.log('value: ', value)
+        return h('input', {
+          id: this.props.forID,
+          className: this.props.classNameWrapper,
+          type: 'text',
+          value: value ? value.join(separator) : '',
+          onChange: this.handleChange,
+        });
+      },
+    });
+
+    var CategoriesPreview = createClass({
+      render: function() {
+        return h('ul', {},
+          this.props.value.map(function(val, index) {
+            return h('li', {key: index}, val);
+          })
+        );
+      }
+    });
+
+    var schema = {
+      properties: {
+        separator: { type: 'string' },
+      },
+    }
+    
+    
+    var TitleControl = createClass({
+      changeHandler(e) {
+        console.log('change event: ', e.target.value)
+        return this.props.onChange(e.target.value);
+      },
+      render: function() {
+        var value = this.props.value;
+        return h('input', {
+          id: this.props.forID,
+          className: this.props.classNameWrapper,
+          type: 'text',
+          value: value,
+          onChange: this.changeHandler,
+        });
+      },
+    });
+
+    var TitlePreview = createClass({
+      render: function() {
+        return h('h1', {}, this.props.value);
+      }
+    });
+    
+    
+    var SlugControl = createClass({
+      changeHandler(e) {
+        console.log('change event: ', e.target.value)
+        return this.props.onChange(e.target.value);
+      },
+      render: function() {
+        var value = this.props.value;
+        return h('input', {
+          id: this.props.forID,
+          className: this.props.classNameWrapper,
+          type: 'text',
+          value: value,
+          onChange: this.changeHandler,
+        });
+      },
+    });
+
+    var SlugPreview = createClass({
+      render: function() {
+        return h('h1', {}, this.props.value);
+      }
+    });
+    
+
+    CMS.registerWidget('categories', CategoriesControl, CategoriesPreview, schema);
+    CMS.registerWidget('title', TitleControl, TitlePreview);
+    CMS.registerWidget('slug', SlugControl, SlugPreview);
+  </script>
 </body>
 </html>
