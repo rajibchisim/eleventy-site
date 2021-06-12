@@ -11,6 +11,7 @@ module.exports = (eleventyConfig) => {
       strictFilters: true,
       root: ["_includes"]
     };
+    eleventyConfig.setUseGitIgnore(false);
     eleventyConfig.setDataDeepMerge(true);
     eleventyConfig.setLibrary("liquid", new Liquid(options));
     eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
@@ -29,10 +30,15 @@ module.exports = (eleventyConfig) => {
     
     eleventyConfig.addShortcode('version', function(){ return now })
     
-    eleventyConfig.addPassthroughCopy({
-      "assets": "assets",
+    
+    // Watch our generated CSS file for changes
+    eleventyConfig.addWatchTarget("./_tmp/css/main.css");
+    // If it changes, write it to our generated full site
+    eleventyConfig.addPassthroughCopy({ 
+      "assets/img": "assets/img",
       "src/admin/config.yml": "admin/config.yml",
-    })
+      "_tmp/css/main.css": "assets/css/main.css" 
+    });
     
     return {
       // markdownTemplateEngine: 'liquid',

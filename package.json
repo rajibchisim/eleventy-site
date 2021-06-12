@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all --parallel eleventy style browsersync",
-    "eleventy": "eleventy --watch",
-    "debug": "DEBUG=Eleventy* eleventy && style",
-    "style": "postcss ./src/styles/main.css --o ./_site/assets/css/main.css --watch",
+    "start": "npm-run-all --parallel style:watch eleventy:watch",
+    "eleventy:watch": "eleventy --serve",
+    "eleventy:build": "ELEVENTY_PRODUCTION=true eleventy",
+    "debug": "DEBUG=Eleventy* eleventy:watch && style:watch",
+    "style:watch": "postcss ./src/styles/main.css --o ./_tmp/css/main.css --watch",
+    "style:build": "NODE_ENV=production postcss ./src/styles/main.css --o ./_tmp/css/main.css",
     "browsersync": "browser-sync start --server '_site' --files '_site' --port 8080 --no-notify --no-open",
-    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss ./src/styles/main.css --o ./_site/assets/css/main.css"
+    "build": "npm-run-all style:build eleventy:build"
   },
   "keywords": [],
   "author": "",
