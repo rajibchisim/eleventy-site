@@ -1,6 +1,7 @@
 const now = String(Date.now())
 const yaml = require("js-yaml")
 const blogsGrouped = require('./src_eleventy/BlogsGroupedByDate')
+const htmlmin = require('html-minifier')
 
 
 module.exports = (eleventyConfig) => {
@@ -38,6 +39,20 @@ module.exports = (eleventyConfig) => {
       "assets/img": "assets/img",
       "src/admin/config.yml": "admin/config.yml",
       "_tmp/css/main.css": "assets/css/main.css" 
+    });
+    
+    eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
+      // Eleventy 1.0+: use this.inputPath and this.outputPath instead
+      if (outputPath.endsWith(".html")) {
+        let minified = htmlmin.minify(content, {
+          useShortDoctype: true,
+          removeComments: true,
+          collapseWhitespace: true
+        });
+        return minified;
+      }
+  
+      return content;
     });
     
     return {
