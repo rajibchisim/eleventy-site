@@ -10,7 +10,7 @@
     "style:watch": "postcss ./src/styles/main.css --o ./_tmp/css/main.css --watch",
     "style:build": "NODE_ENV=production postcss ./src/styles/main.css --o ./_tmp/css/main.css",
     "browsersync": "browser-sync start --server '_site' --files '_site' --port 8080 --no-notify --no-open",
-    "build": "npm-run-all style:build eleventy:build"
+    "publish": "npm-run-all style:build eleventy:build"
   },
   "keywords": [],
   "author": "",
@@ -28,12 +28,12 @@
     "postcss": "^8.3.0",
     "postcss-cli": "^8.3.1",
     "tailwindcss": "^2.1.2",
-    "moment": "^2.29.1"
+    "moment": "^2.29.1",
+    "postcss-import": "^14.0.2"
   },
   "description": "",
   "dependencies": {
     "@glidejs/glide": "^3.4.1",
-    "netlify-cms-app": "^2.15.11",
-    "postcss-import": "^14.0.2"
+    "netlify-cms-app": "^2.15.11"
   }
 }
