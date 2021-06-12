@@ -1,0 +1,14 @@
+[build]
+command = "npm run build"
+publish = "_site"
+
+[context.production]
+environment = { NODE_VERSION = "15.2.0", NODE_ENV = "production", ELEVENTY_PRODUCTION = true }
+
+[dev]
+command = "npm run start"
+framework = "#custom"
+publish = "_site"
+port = 3000
+targetPort = 8081
+NODE_ENV = "development"
