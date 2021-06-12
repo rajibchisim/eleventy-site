@@ -10,7 +10,7 @@
     "style:watch": "postcss ./src/styles/main.css --o ./_tmp/css/main.css --watch",
     "style:build": "NODE_ENV=production postcss ./src/styles/main.css --o ./_tmp/css/main.css",
     "browsersync": "browser-sync start --server '_site' --files '_site' --port 8080 --no-notify --no-open",
-    "publish": "npm-run-all style:build eleventy:build"
+    "publish": "npm run style:build && npm run eleventy:build"
   },
   "keywords": [],
   "author": "",
