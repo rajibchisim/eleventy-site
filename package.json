@@ -16,6 +16,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+  },
+  "description": "",
+  "dependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.2.6",
@@ -29,10 +32,7 @@
     "postcss-cli": "^8.3.1",
     "tailwindcss": "^2.1.2",
     "moment": "^2.29.1",
-    "postcss-import": "^14.0.2"
-  },
-  "description": "",
-  "dependencies": {
+    "postcss-import": "^14.0.2",
     "@glidejs/glide": "^3.4.1",
     "netlify-cms-app": "^2.15.11"
   }
