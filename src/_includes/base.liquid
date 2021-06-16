@@ -76,6 +76,25 @@ recentPosts:
                 }
             });
         }
+        
+        let options = {
+            rootMargin: '0px',
+            threshold: .25
+        }
+
+        let observer = new IntersectionObserver((entries, observer)=>{
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.remove('translate-y-16')
+                }
+            })
+        }, options);
+        
+        let targets = document.querySelectorAll('.service')
+        targets.forEach( target => observer.observe(target))
+        
+        
+        
     </script>
 </body>
 
