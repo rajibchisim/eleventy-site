@@ -19,7 +19,10 @@ backgroundImage: 'page-title.jpg'
                 </div>
                 <div class="mb-6">
                     <h5 class="mb-2 text-xl">Address</h5>
-                    <p>{{ settings.address }}</p>
+                    <h5>{{ settings.company }}</h5>
+                    {% for address in settings.address %}
+                    <p>{{ address.line }}</p>
+                    {% endfor %}
                 </div>
                 <div class="mb-6">
                     <h5 class="mb-2 text-xl">Social</h5>

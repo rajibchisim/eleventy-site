@@ -15,7 +15,7 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.setUseGitIgnore(false);
     eleventyConfig.setDataDeepMerge(true);
     eleventyConfig.setLibrary("liquid", new Liquid(options));
-    eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
+    eleventyConfig.addDataExtension("yml", contents => yaml.load(contents));
   
     eleventyConfig.addFilter("eleventy_version", () => require("@11ty/eleventy/package.json").version);
     eleventyConfig.addFilter("liquid_version", () => require("liquidjs/package.json").version);
@@ -23,6 +23,7 @@ module.exports = (eleventyConfig) => {
     
     eleventyConfig.addCollection("blogsGroupedByDate", blogsGrouped.byDate);
     eleventyConfig.addCollection("blogsGroupedByMonth", blogsGrouped.byMonth);
+    eleventyConfig.addCollection("blogsRecent", blogsGrouped.latest);
     
     // Copy css to _site directory
     /* eleventyConfig.addWatchTarget('./_tmp/style.css')
@@ -37,6 +38,7 @@ module.exports = (eleventyConfig) => {
     // If it changes, write it to our generated full site
     eleventyConfig.addPassthroughCopy({ 
       "assets/img": "assets/img",
+      "assets/uploads": "assets/public",
       "src/admin/config.yml": "admin/config.yml",
       "_tmp/css/main.css": "assets/css/main.css" 
     });

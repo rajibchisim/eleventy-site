@@ -22,10 +22,9 @@
                         {% for testimony in testimonials %}
                         <div class="glide__slide">
                             <div class="p-4 py-6 text-center bg-white rounded-md">
-                                <p>{{ testimony.message }}</p>
                                 <div class="mt-5">
                                     <div class="mb-4 text-center">
-                                        <img class="inline-block w-16 h-16 rounded-full" src="{{ 'assets/img/client.jpg' | url }}" alt="client" loading="lazy">
+                                        <img class="inline-block w-16 h-16 rounded-full" src="{{ testimony.image | default: 'assets/img/client.jpg' | url }}" alt="client" loading="lazy">
                                     </div>
                                     <div>
                                         <h4 class="text-xl">{{ testimony.name }}</h4>

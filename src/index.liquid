@@ -1,67 +1,10 @@
 ---
 title: 'Home'
 layout: 'base'
-
-herosliders:
-  - title: We Are Digital Product Design Agency.
-    body: Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-    image: '/assets/img/background_1.webp'
-  - title: We Are Digital Product Design Agency.
-    body: Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-    image: '/assets/img/background_2.webp'
-  - title: We Are Digital Product Design Agency.
-    body: Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-    image: '/assets/img/background_3.webp'
-  - title: We Are Digital Product Design Agency.
-    body: Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-    image: '/assets/img/background_4.webp'
-    
-latestWork:
-  - title: Very hard work
-    body: Sparkle with studio-quality animation
-    image: 'assets/img/portfolio1.jpg'
-  - title: Very hard work
-    body: Sparkle with studio-quality animation
-    image: 'assets/img/portfolio1.jpg'
-  - title: Very hard work
-    body: Sparkle with studio-quality animation
-    image: 'assets/img/portfolio1.jpg'
-  - title: Very hard work
-    body: Sparkle with studio-quality animation
-    image: 'assets/img/portfolio1.jpg'
-  - title: Very hard work
-    body: Sparkle with studio-quality animation
-    image: 'assets/img/portfolio1.jpg'
-  - title: Very hard work
-    body: Sparkle with studio-quality animation
-    image: 'assets/img/portfolio1.jpg'
-    
-faqs:
-  - que: Low Cost Advertising Available or Not?
-    ans: Pellentesque habitant morbi tristique senectus et netus et malesu ada fames and reply to all. Pellentesque habitant morbi
-  - que: What Is The Big R For Marketing Your Business?
-    ans: Pellentesque habitant morbi tristique senectus et netus et malesu ada fames and reply to all morbi tristique. Pellentesque habitant morbi tristique senectus et netus et malesu ada fames and reply to all morbi tristique.
-  - que: Does Using Banner Stands Increase Trade Show Traffic?
-    ans: Pellentesque habitant morbi tristique senectus et netus et malesu ada fames and reply to all.
-  - que: How To Write Better Advertising Copy?
-    ans: Pellentesque habitant morbi tristique senectus et netus et malesu fames and reply to all habitant morbi. Pellentesque habitant morbi tristique senectus et netus et malesu fames and reply to all habitant morbi.
-testimonials:
-  - message: 1. When I was just starting 6th grade I got my first job. Paperboy! Boy, was I excited. At that time I had spent a lot of time actually playing the video official
-    name: John doe
-    role: Designer
-  - message: 2. When I was just starting 6th grade I got my first job. Paperboy! Boy, was I excited. At that time I had spent a lot of time actually playing the video official
-    name: John doe
-    role: Designer
-  - message: 3. When I was just starting 6th grade I got my first job. Paperboy! Boy, was I excited. At that time I had spent a lot of time actually playing the video official
-    name: John doe
-    role: Designer
-  - message: 4. When I was just starting 6th grade I got my first job. Paperboy! Boy, was I excited. At that time I had spent a lot of time actually playing the video official
-    name: John doe
-    role: Designer
 ---
 
-{% render 'partials/slider' sliders:herosliders %}
+{% render 'partials/slider' sliders: hero_slider.items %}
 {% render 'partials/our-service' services: services.items %}
-{% render 'partials/latest-work' portfolios:latestWork %}
-{% render 'partials/faq' faqs:faqs %}
-{% render 'partials/testimonial' testimonials:testimonials %}
+{% render 'partials/latest-work' portfolios: latest_work.items %}
+{% render 'partials/faq' faqs: faqs.items %}
+{% render 'partials/testimonial' testimonials: testimonials.items %}

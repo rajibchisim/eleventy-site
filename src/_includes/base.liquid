@@ -1,15 +1,3 @@
----
-recentPosts:
-  - title: Curling irons are as individual as the women
-    image: /assets/img/recent1.jpg
-    published_at: 2021-05-20T18:06:32.803Z
-  - title: Curling irons are as individual as the women
-    image: /assets/img/recent1.jpg
-    published_at: 2021-05-15T18:06:32.803Z
-  - title: Curling irons are as individual as the women
-    image: /assets/img/recent1.jpg
-    published_at: 2021-05-10T18:06:32.803Z
----
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,7 +28,7 @@ recentPosts:
         
         {{ content }}
         
-        {% render 'partials/footer', recentPosts: recentPosts %}
+        {% render 'partials/footer', recentPosts: collections.blogsRecent, quicklinks: quicklinks.items, aboutus: aboutus, settings: settings %}
         
     </div>
 

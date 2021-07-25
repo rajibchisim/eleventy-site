@@ -4,29 +4,26 @@
             <div class="flex flex-wrap">
                 <div class="md:w-1/2 lg:w-1/4">
                     <div class="p-4">
-                        <h4 class="mb-3 text-xl">About</h4>
-                        <p class="mb-2">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                        <p class="mb-2">Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, antesenectus et netus et malesuada fames ac turpis egestas.</p>
+                        <h4 class="mb-3 text-xl">{{ aboutus.text }}</h4>
+                        {% for para in aboutus.items %}
+                        <p class="mb-2">{{ para.text }}</p>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="md:w-1/2 lg:w-1/4">
                     <div class="p-4">
                         <h4 class="mb-3 text-xl">Company</h4>
                         <ul>
-                            <li class="mb-2"><a href="#">Company Overview</a></li>
-                            <li class="mb-2"><a href="#">Meet The Team</a></li>
-                            <li class="mb-2"><a href="#">Our Awesome Partners</a></li>
-                            <li class="mb-2"><a href="#">Our Services</a></li>
-                            <li class="mb-2"><a href="#">Frequently Asked Questions</a></li>
-                            <li class="mb-2"><a href="#">Contact Us</a></li>
-                            <li class="mb-2"><a href="#">Terms of Use</a></li>
+                            {% for link in quicklinks %}
+                            <li class="mb-2"><a href="{{ link.url }}">{{ link.text }}</a></li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
                 <div class="md:w-1/2 lg:w-1/4">
                     <div class="p-4">
                         <h4 class="mb-3 text-xl">Recent Posts</h4>
-                        {% for article in recentPosts %}
+                        {% for article in recentPosts limit: 3 %}
                         <div class="flex mb-3">
                             <a href="#">
                                 <img src="{{ article.image | url }}" loading="lazy" class="w-28" alt="">
@@ -35,7 +32,7 @@
                                 <h5>
                                     <a href="#">{{ article.title }}</a>
                                 </h5>
-                                <span class="text-sm text-gray-500">{{ article.published_at | date: "%a, %b %d, %Y" }}</span>
+                                <span class="text-sm text-gray-500">{{ article.date | date: "%a, %b %d, %Y" }}</span>
                             </div>
                         </div>
                         {% endfor %}
@@ -44,8 +41,11 @@
                 <div class="md:w-1/2 lg:w-1/4">
                     <div class="p-4">
                         <h4 class="mb-3 text-xl">Address</h4>
-                        <h5>Flat Pro, Inc.</h5>
-                        <p>649 Folsom Ave, Suite 400 <br>San Francisco, CA 63105 <br>P: (123) 456-7890</p>
+                        <h5>{{ settings.company }}</h5>
+                        {% for address in settings.address %}
+                        <p>{{ address.line }}</p>
+                        {% endfor%}
+                        <p>P:{{ settings.phone }}</p>
                         <h4 class="mt-3 mb-2">Newsletter</h4>
                         
                         <form action="#" class="flex">

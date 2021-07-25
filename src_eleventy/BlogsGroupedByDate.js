@@ -4,12 +4,12 @@
  */
 const moment = require("moment")
 
-const byDate = function(collection) {
-    return group(collection, 'date')
+const byDate = function(collectionApi) {
+    return group(collectionApi, 'date')
 }
 
-const byMonth = function (collection){
-    return group(collection, 'month')
+const byMonth = function (collectionApi){
+    return group(collectionApi, 'month')
 }
 
 
@@ -56,9 +56,9 @@ const byMonth = function (collection){
     ]
     */
    
-const group = function (collection, by = 'date') {
+const group = function (collectionApi, by = 'date') {
     let spCollection = {};
-    collection.getFilteredByTag('blog').forEach(item => {
+    collectionApi.getFilteredByTag('blog').forEach(item => {
         let dateKey = ''
         if(by === 'date') {
             dateKey = (new moment(item.data.date)).format('YYYY-MM-DD')
@@ -69,31 +69,71 @@ const group = function (collection, by = 'date') {
         }
         
         if(spCollection.hasOwnProperty(dateKey)) {
-        spCollection[dateKey].push({
-            title: item.data.title,
-            url: item.url
-        })
+            spCollection[dateKey].push({
+                title: item.data.title,
+                url: item.url
+            })
         } else {
-        let newEntry = []
-        newEntry.push({
-            title: item.data.title,
-            url: item.url
-        })
-        spCollection[dateKey] = newEntry
+            let newEntry = []
+            newEntry.push({
+                title: item.data.title,
+                url: item.url
+            })
+            spCollection[dateKey] = newEntry
         }
     })
 
     let spCollectionGrouped = [];
     Object.keys(spCollection).forEach(item => {
         spCollectionGrouped.push({
-        name: item,
-        posts: spCollection[item]
+            name: item,
+            posts: spCollection[item]
         })
     })
     
     return spCollectionGrouped
 }
 
+// using this function as an reference
+// might be usefull when sorting other than date by just modifying field sort logic
+const latest = function(collectionApi) {
+    let blogs = collectionApi.getFilteredByTag('blog')
+                    .sort((a, b) => {
+                        let dateA = new Date(a.data.date)
+                        let dateB = new Date(b.data.date)
+                        if(dateA < dateB ) return 1
+                        else if (dateA > dateB) return -1
+                        else return 0        
+                    })
+    
+    let onlyData = []
+    blogs.forEach(item => {
+        onlyData.push(item.data)
+    })
+    
+    return onlyData
+}
+
+const oldest = function(collectionApi) {
+    let blogs = collectionApi.getFilteredByTag('blog')
+                        .sort((a, b) => {
+                            let dateA = new Date(a.data.date)
+                            let dateB = new Date(b.data.date)
+                            if(dateA < dateB ) return -1
+                            else if (dateA > dateB) return 1
+                            else return 0        
+                        }) 
+    let onlyData = []
+    blogs.forEach(item => {
+        onlyData.push(item.data)
+    })           
+             
+    return onlyData
+}
+
 module.exports =  {
-    byDate, byMonth
+    byDate, 
+    byMonth,
+    latest,
+    oldest
 }

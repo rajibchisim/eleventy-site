@@ -6,9 +6,9 @@
         <div class="flex flex-wrap mt-12">
             <div class="px-4 md:w-1/2">
                 {% for faq in faqs %}
-                <div class="mb-3 bg-white rounded"
+                <div class="mb-3 rounded"
                     x-data="{ isOpen: false, $this: 'ans'+{{ forloop.index }} }"
-                    x-bind:class="isOpen ? 'bg-blue-400 text-white' : ''">
+                    x-bind:class="isOpen ? 'bg-blue-400 text-white' : 'bg-white'">
                     <h4 class="p-4 cursor-pointer" x-on:click=" isOpen = !isOpen ">
                         <i class="mr-2 text-xl fa" 
                         x-bind:class=" isOpen ? 'fa-minus-circle' : 'fa-plus-circle' "></i>{{ faq.que }}
