@@ -1,7 +1,7 @@
 backend:
   # Use netlify identity as backend
-  # name: proxy
-  name: git-gateway
+  name: proxy
+  # name: git-gateway
   repo: rajibchisim/eleventy-site
   proxy_url: http://localhost:8081/api/v1
   branch: master
@@ -35,14 +35,13 @@ collections:
       preview: true   
     identifier_field: title 
     fields:
-      - { label: Draft, name: draft, widget: boolean, default: true }
       - { label: "Title", name: "title", widget: "title" }
       - { label: "Slug", name: "slug", widget: "string", pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$','A slug can have no spaces or special characters']}
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { name: categories, label: Categories, widget: categories}
+      - { label: Keywords, name: keywords, widget: categories, required: false }
       - { label: 'Category', name: 'category', required: false, multiple: true, widget: 'relation', collection: 'category', search_fields: ['title'], value_field: 'slug', display_fields: ['title']}
       
   - label: "Settings"

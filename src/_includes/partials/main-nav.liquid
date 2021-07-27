@@ -10,7 +10,7 @@
                 <div class="flex items-center order-1">
                     <div class="relative" x-data="{ show: false }" x-on:click.away="show = false">
                         <span class="p-3 fa fa-search" x-on:click="show = !show"></span>
-                        <form x-show="show" action="#" class="absolute left-0 flex py-2 transform -translate-x-full -translate-y-1/2 bg-white border rounded-md top-1/2">
+                        <form x-show="show" action="#" class="absolute right-0 z-30 flex py-2 bg-white border rounded-md" style="display: none;">
                             <input class="ml-3 text-gray-800 outline-none" type="search" placeholder="search now">
                             <button type="submit"><i class="mx-2 fa fa-search"></i></button>
                         </form>
