@@ -1,21 +1,22 @@
 ---
-slug: I hate yogurt
+draft: true
+title: I hate yogurt. It's just stuff with bits in. changed today.
+slug: i-hate-yogurt
 author: rajib
 permalink: /blogs/{{ title | slug }}/
-title: I hate yogurt. It's just stuff with bits in. changed today.
+date: 2021-07-24T12:58:13.805Z
+tags:
+  - Tags
 description: Far far away, behind the word mountains, far from the countries
   Vokalia and Consonantia, there live the blind texts. Separated they live in
   Bookmarksgrove right at the coast of the Semantics, a large language ocean. A
   small river named Duden flows by their place and supplies it with the
   necessary regelialia. It is a paradisematic country, in which roasted parts of
   sentences fly into your mouth.
-date: 2021-07-24T12:58:13.805Z
 categories:
   - One
   - Two
   - Three
-tags:
-  - Tags
 ---
 # I hate yogurt. It's just stuff with bits in.
 

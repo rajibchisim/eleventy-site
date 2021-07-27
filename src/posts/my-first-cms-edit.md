@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Too much work. Let's burn it and say we dumped it in the sewer
 slug: first
 description: But I must explain to you how all this mistaken idea of denouncing
@@ -9,11 +10,11 @@ description: But I must explain to you how all this mistaken idea of denouncing
   know.
 author: rajib chisim
 date: 2021-05-23T18:06:32.803Z
-categories:
-  - blog
 tags:
   - created
   - from
+categories:
+  - blog
 ---
 # Too much work. Let's burn it and say we dumped it in the sewer.
 

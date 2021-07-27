@@ -11,8 +11,22 @@ public_folder: "assets/public"
 
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: true
-# publish_mode: editorial_workflow
+publish_mode: editorial_workflow
 collections:
+  - label: Blog categories
+    name: category
+    folder: src/_data/categories/
+    create: true
+    editor:
+      preview: false
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Slug
+        name: slug
+        widget: string
+        
   - label: "Blog"
     name: "blog"
     folder: "src/posts"
@@ -21,19 +35,16 @@ collections:
       preview: true   
     identifier_field: title 
     fields:
+      - { label: Draft, name: draft, widget: boolean, default: true }
       - { label: "Title", name: "title", widget: "title" }
-      - { label: "Slug", name: "slug", widget: "slug", default: "{{title}}"}
+      - { label: "Slug", name: "slug", widget: "string", pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$','A slug can have no spaces or special characters']}
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { name: categories, label: Categories, widget: categories}
-      - widget: select
-        label: "tags"
-        name: "tags"
-        multiple: true
-        create: true
-        options: ["Tags", "created", "from", "config.yml"]
+      - { label: 'Category', name: 'category', required: false, multiple: true, widget: 'relation', collection: 'category', search_fields: ['title'], value_field: 'slug', display_fields: ['title']}
+      
   - label: "Settings"
     name: "settings"
     editor:
@@ -97,6 +108,7 @@ collections:
             fields:
               - { label: Platform, name: name, widget: select, options: ['facebook', twitter, 'linkedin'] }
               - { label: Url, name: url, widget: string }
+              
   - label: Services
     name: services
     files: 
@@ -138,6 +150,7 @@ collections:
                 fields:
                   - { name: url, label: Url, widget: string, required: false }
                   - { name: text, label: Text, widget: string, required: false }
+                  
   - label: Latest work
     name: latestWork
     files: 
@@ -154,6 +167,7 @@ collections:
               - { name: title, label: Title, widget: string }
               - { name: body, label: Body, widget: string }
               - { name: image, label: Image, widget: image }
+              
   - label: FAQ
     name: faq
     files: 
@@ -169,6 +183,7 @@ collections:
             fields:
               - { name: que, label: Question, widget: string }
               - { name: ans, label: Answer, widget: string }
+              
   - label: Testimonials
     name: testimonials
     files: 

@@ -74,7 +74,7 @@
     
     var SlugControl = createClass({
       changeHandler(e) {
-        console.log('change event: ', e.target.value)
+        console.log('slug field changed: ', e.target.value)
         return this.props.onChange(e.target.value);
       },
       render: function() {
@@ -95,10 +95,63 @@
       }
     });
     
+    function convertToOption(raw) {
+      if (typeof raw === 'string') {
+        return { label: raw, value: raw };
+      }
+      return Map.isMap(raw) ? raw.toJS() : raw;
+    }
+    
+    var TagsController = createClass({
+      
+      handleChange = selectedOption => {
+        /* const { onChange, field } = this.props;
+        const isMultiple = field.get('multiple', false);
+        const isEmpty = isMultiple ? !selectedOption?.length : !selectedOption;
+
+        if (field.get('required') && isEmpty && isMultiple) {
+          onChange(List());
+        } else if (isEmpty) {
+          onChange(null);
+        } else if (isMultiple) {
+          const options = selectedOption.map(optionToString);
+          onChange(fromJS(options));
+        } else {
+          onChange(optionToString(selectedOption));
+        } */
+      },
+      render: function(){
+        const { field, value, forID, classNameWrapper, setActiveStyle, setInactiveStyle } = this.props;
+        const fieldOptions = field.get('options');
+        const isMultiple = field.get('multiple', false);
+        const isClearable = !field.get('required', true) || isMultiple;
+
+        console.log('options:', ...tags.map(convertToOption))
+        const options =  [...tags.map(convertToOption)]
+        // const options = [...fieldOptions.map(convertToOption)];
+        /* const selectedValue = getSelectedValue({
+          options,
+          value,
+          isMultiple,
+        }); */
+        
+        return h('select', {
+          id: forID,
+          className: classNameWrapper,
+          type: 'text',
+          // value: selectedValue,
+          // options: options
+          value: 'hello',
+          options: options,
+          onChange: this.handleChange,
+        });
+      }
+    });
 
     CMS.registerWidget('categories', CategoriesControl, CategoriesPreview, schema);
     CMS.registerWidget('title', TitleControl, TitlePreview);
     CMS.registerWidget('slug', SlugControl, SlugPreview);
+    CMS.registerWidget('tags', TagsController);
   </script>
 </body>
 </html>

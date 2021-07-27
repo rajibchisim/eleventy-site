@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Eaque ipsa quae ab illo inventore veritatis et quasi.
 slug: someslug
 description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
@@ -10,10 +11,9 @@ author: rajib chsim
 date: 2021-05-25T12:20:38.912Z
 categories:
   - one
-  - two
-  - four
-tags:
-  - Tags
+category:
+  - computer
+  - travel
 ---
 # Dear God, they'll be killed on our doorstep! And there's no trash pickup until January 3rd.
 
