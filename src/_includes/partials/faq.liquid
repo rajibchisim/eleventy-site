@@ -1,11 +1,11 @@
 <div class="text-gray-700 bg-indigo-100 bg-opacity-25">
     <div class="container py-16 mx-auto">
         {% render 'partials/section-header'
-        title: 'Frequently Asked Questions',
-        excerpt: 'Malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.' %}
+        title: faqs.title,
+        excerpt: faqs.excerpt %}
         <div class="flex flex-wrap mt-12">
             <div class="px-4 md:w-1/2">
-                {% for faq in faqs %}
+                {% for faq in faqs.items %}
                 <div class="mb-3 rounded"
                     x-data="{ isOpen: false, $this: 'ans'+{{ forloop.index }} }"
                     x-bind:class="isOpen ? 'bg-blue-400 text-white' : 'bg-white'">
@@ -25,7 +25,7 @@
             </div>
             <div class="hidden px-4 md:block md:w-1/2">
                 <div class="ml-32 w-80">
-                    <img src="{{ 'assets/img/fag-img.png' | url }}" class="w-full" alt="faq">
+                    <img src="{{ faqs.image | default: 'assets/img/fag-img.png' | url }}" class="w-full" alt="faq">
                 </div>
             </div>
         </div>

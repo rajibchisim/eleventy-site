@@ -165,17 +165,28 @@ collections:
             fields:
               - { name: title, label: Title, widget: string }
               - { name: body, label: Body, widget: string }
-              - { name: image, label: Image, widget: image }
+              - { name: image, label: Image, widget: image, required: false }
               
   - label: FAQ
     name: faq
-    files: 
+    files:
       - label: Add/Edit FAQ
         name: items
         file: "src/_data/faqs.yml"
         editor:
           preview: false
         fields:
+          - label: Section Title
+            name: title
+            widget: string
+          - label: Section Excerpt
+            name: excerpt
+            widget: string
+          - name: image
+            label: Section image
+            widget: image
+            hint: Recomended 400x450
+            required: false
           - name: items
             widget: list
             allow_add: true

@@ -1,19 +1,19 @@
 items:
   - title: Very hard work
     body: Sparkle with studio-quality animation
-    image: 'assets/img/portfolio1.jpg'
+    image: assets/public/bootstrap_escape.jpg
   - title: Very hard work
     body: Sparkle with studio-quality animation
-    image: 'assets/img/portfolio1.jpg'
+    image: assets/public/bootstrap_ocean_edge.jpg
   - title: Very hard work
     body: Sparkle with studio-quality animation
-    image: 'assets/img/portfolio1.jpg'
+    image: assets/public/bootstrap_playground.jpg
   - title: Very hard work
     body: Sparkle with studio-quality animation
-    image: 'assets/img/portfolio1.jpg'
+    image: assets/public/bootstrap_playground_school.jpg
   - title: Very hard work
     body: Sparkle with studio-quality animation
-    image: 'assets/img/portfolio1.jpg'
+    image: assets/public/bootstrap_theme_tiny.jpg
   - title: Very hard work
     body: Sparkle with studio-quality animation
-    image: 'assets/img/portfolio1.jpg'
+    image: assets/public/theme_medilab.jpg
