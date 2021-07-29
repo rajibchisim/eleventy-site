@@ -38,7 +38,7 @@ module.exports = (eleventyConfig) => {
     // If it changes, write it to our generated full site
     eleventyConfig.addPassthroughCopy({ 
       "assets/img": "assets/img",
-      "assets/uploads": "assets/public",
+      "assets/uploads": "assets/uploads",
       "src/admin/config.yml": "admin/config.yml",
       "_tmp/css/main.css": "assets/css/main.css" 
     });
