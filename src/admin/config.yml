@@ -23,7 +23,7 @@ collections:
     fields:
       - label: Title
         name: title
-        widget: string
+        widget: string        
       - label: Slug
         name: slug
         widget: string
@@ -42,6 +42,13 @@ collections:
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Featured image"
+        name: featured
+        widget: image
+        required: false
+        choose_url: true
+        media_folder: ../../assets/uploads/blog
+        public_folder: assets/uploads/blog
       - { label: Keywords, name: keywords, widget: categories, required: false }
       - { label: 'Category', name: 'category', required: false, multiple: true, widget: 'relation', collection: 'category', search_fields: ['title'], value_field: 'slug', display_fields: ['title']}
       

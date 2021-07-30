@@ -111,6 +111,8 @@ const latest = function(collectionApi) {
         onlyData.push(item.data)
     })
     
+    // console.log(onlyData)
+    
     return onlyData
 }
 

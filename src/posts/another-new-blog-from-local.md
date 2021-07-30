@@ -1,14 +1,15 @@
 ---
-draft: true
-title: Eaque ipsa quae ab illo inventore veritatis et quasi.
-slug: someslug
 excerpt: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
   commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
   magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
   ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis
   enim. Donec pede justo, fringilla vel, aliquet nec, vulputate.
+draft: true
+title: Eaque ipsa quae ab illo inventore veritatis et quasi.
+slug: someslug
 author: rajib chsim
 date: 2021-05-25T12:20:38.912Z
+featured: assets/uploads/blog/designecologist-pmh0uog1vle-unsplash.jpg
 categories:
   - one
 category:
