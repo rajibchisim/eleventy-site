@@ -7,7 +7,7 @@ backend:
   branch: master
 
 media_folder: "assets/uploads"
-public_folder: "assets/public"
+public_folder: "assets/uploads"
 
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: true
