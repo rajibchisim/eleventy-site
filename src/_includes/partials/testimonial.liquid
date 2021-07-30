@@ -1,8 +1,8 @@
 <div class="py-16 bg-blue-400">
     <div class="container mx-auto">
         {% render 'partials/section-header',
-         title: 'Clients Review',
-         exerpt: 'Malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.' %}
+         title: testimonials.title,
+         excerpt: testimonials.excerpt %}
          
         <div class="px-4 mx-auto md:w-10/12">
             <div class="font-thin text-gray-500 glide font-roboto">
@@ -19,7 +19,7 @@
                 </div>
                 <div data-glide-el="track" class="glide__track">
                     <div class="glide__slides">
-                        {% for testimony in testimonials %}
+                        {% for testimony in testimonials.items %}
                         <div class="glide__slide">
                             <div class="p-4 py-6 text-center bg-white rounded-md">
                                 <div class="mt-5">

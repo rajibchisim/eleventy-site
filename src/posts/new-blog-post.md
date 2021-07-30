@@ -7,7 +7,7 @@ permalink: /blogs/{{ title | slug }}/
 date: 2021-06-08T14:59:58.454Z
 tags:
   - Tags
-description: Far far away, behind the word mountains, far from the countries
+excerpt: Far far away, behind the word mountains, far from the countries
   Vokalia and Consonantia, there live the blind texts. Separated they live in
   Bookmarksgrove right at the coast of the Semantics, a large language ocean. A
   small river named Duden flows by their place and supplies it with the

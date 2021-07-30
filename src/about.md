@@ -1,6 +1,6 @@
 ---
 title: 'About us'
-description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo recusandae dolorem incidunt temporibus nulla dolore!'
+excerpt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo recusandae dolorem incidunt temporibus nulla dolore!'
 backgroundImage: 'page-title.jpg'
 layout: 'layouts/page-simple'
 ---

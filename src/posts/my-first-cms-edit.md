@@ -2,7 +2,7 @@
 draft: true
 title: Too much work. Let's burn it and say we dumped it in the sewer
 slug: first
-description: But I must explain to you how all this mistaken idea of denouncing
+excerpt: But I must explain to you how all this mistaken idea of denouncing
   pleasure and praising pain was born and I will give you a complete account of
   the system, and expound the actual teachings of the great explorer of the
   truth, the master-builder of human happiness. No one rejects, dislikes, or

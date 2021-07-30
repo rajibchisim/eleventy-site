@@ -12,7 +12,7 @@ pagination:
     <div class="mb-8">
         <h1 class="mb-2 text-2xl">{{ post.data.title }}</h1>
         <p class="mb-2"><i class="fa fa-clock-o"></i> <span> {{ post.data.date | date: "%b %d, %y" }} | </span><span>By: {{ post.data.author }}</span></p>
-        <p class="mb-3">{{ post.data.description }}</p>
+        <p class="mb-3">{{ post.data.excerpt }}</p>
         <a class="inline-block px-3 py-1 text-green-500 border border-current" href="/blogs/{{ post.data.slug }}">Read more</a>
     </div>
     {% endfor %}

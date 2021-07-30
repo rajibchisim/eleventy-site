@@ -1,9 +1,10 @@
 backend:
   # Use netlify identity as backend
-  # name: proxy
   name: git-gateway
   repo: rajibchisim/eleventy-site
   proxy_url: http://localhost:8081/api/v1
+  # url: http://localhost:8082/api/v1
+  allowed_hosts: ['192.168.0.1']
   branch: master
 
 media_folder: "assets/uploads"
@@ -37,7 +38,7 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "title" }
       - { label: "Slug", name: "slug", widget: "string", pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$','A slug can have no spaces or special characters']}
-      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Excerpt", name: "excerpt", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
@@ -72,7 +73,7 @@ collections:
             fields:
               - { label: Text, name: text, widget: string }
               - { label: URL, name: url, widget: string }
-              - { label: Description, name: description, widget: string, required: false }
+              - { label: Excerpt, name: excerpt, widget: string, required: false }
       - label: "About us (Eg. use in footer)"
         name: "aboutus"
         file: "src/_data/aboutus.yml"
@@ -115,13 +116,21 @@ collections:
         name: items
         file: "src/_data/services.yml"
         fields:
+          - name: title
+            label: Section title
+            widget: string
+            required: false
+          - name: excerpt
+            label: Section excerpt
+            widget: string
+            required: false
           - name: items
             label: Services
             widget: list
             allow_add: true
             fields:
               - { label: Name, name: title, widget: string }
-              - { label: Description, name: body, widget: string }
+              - { label: Excerpt, name: excerpt, widget: string }
               - { label: FontAwesome Icon 4.7, name: icon, widget: string }
               
   - label: Hero Slider
@@ -159,6 +168,14 @@ collections:
         editor:
           preview: false
         fields:
+          - name: title
+            label: Section title
+            widget: string
+            required: false
+          - name: excerpt
+            label: Section excerpt
+            widget: string
+            required: false
           - name: items
             widget: list
             allow_add: true
@@ -203,6 +220,14 @@ collections:
         editor:
           preview: false
         fields:
+          - name: title
+            label: Section title
+            widget: string
+            required: false
+          - name: excerpt
+            label: Section excerpt
+            widget: string
+            required: false
           - name: items
             widget: list
             allow_add: true
