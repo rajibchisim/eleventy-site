@@ -25,8 +25,8 @@
                         <h4 class="mb-3 text-xl">Recent Posts</h4>
                         {% for article in recentPosts limit: 3 %}
                         <div class="flex mb-3">
-                            <a href="#">
-                                <img src="{{ article.featured | url | append: '?nf_resize=smartcrop&w=100&h=100' }}" loading="lazy" class="w-28" alt="">
+                            <a href="#" class="flex-shrink-0">
+                                <img src="/{{ article.featured | url | append: '?nf_resize=smartcrop&w=112&h=112' }}" loading="lazy" class="w-28" alt="">
                             </a>
                             <div class="ml-3">
                                 <h5>
