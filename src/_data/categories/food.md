@@ -1,4 +1,4 @@
 ---
-title: Food Changed
+title: Food
 slug: food-changed
 ---

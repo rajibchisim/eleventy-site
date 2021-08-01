@@ -12,19 +12,15 @@ author: rajib
 permalink: /blogs/{{ title | slug }}/
 date: 2021-07-24T12:58:13.805Z
 featured: assets/uploads/blog/name-with-spaces.jpeg
-tags:
-  - Tags
-  - blog
 categories:
-  - One
-  - Two
-  - Three
+  - css
+  - computer
 ---
-# I hate yogurt. It's just stuff with bits in.
+## I hate yogurt. It's just stuff with bits in.
 
 I'm nobody's taxi service; I'm not gonna be there to catch you every time you feel like jumping out of a spaceship. Annihilate? No. No violence. I won't stand for it. Not now, not ever, do you understand me?! I'm the Doctor, the Oncoming Storm - and you basically meant beat them in a football match, didn't you?
 
-I'm the Doctor, I'm worse than everyone's aunt. *catches himself* And that is not how I'm introducing myself. I'm the Doctor. Well, they call me the Doctor. __I don't know why.__ *I call me the Doctor too.* I still don't know why.
+I'm the Doctor, I'm worse than everyone's aunt. *catches himself* And that is not how I'm introducing myself. I'm the Doctor. Well, they call me the Doctor. **I don't know why.** *I call me the Doctor too.* I still don't know why.
 
 ## Aw, you're all Mr. Grumpy Face today.
 

@@ -49,8 +49,7 @@ collections:
         choose_url: true
         media_folder: ../../assets/uploads/blog
         public_folder: assets/uploads/blog
-      - { label: Keywords, name: keywords, widget: categories, required: false }
-      - { label: 'Category', name: 'category', required: false, multiple: true, widget: 'relation', collection: 'category', search_fields: ['title'], value_field: 'slug', display_fields: ['title']}
+      - { label: 'Category', name: 'categories', required: false, multiple: true, widget: 'relation', collection: 'category', search_fields: ['title'], value_field: 'slug', display_fields: ['title']}
       
   - label: "Settings"
     name: "settings"

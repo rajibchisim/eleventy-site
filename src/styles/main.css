@@ -1,19 +1,33 @@
-@import "./tailwind.css";
-
 @import "../../node_modules/@glidejs/glide/dist/css/glide.core.css";
 @import "../../node_modules/@glidejs/glide/dist/css/glide.theme.css";
 
-.glide__arrow_override {
-    display: none;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --navbar-height: 78px;
+    --navbar-bottom: 32px;
 }
 
-.sp-bg {
-    background-color: red;
-    color: green;
-}
-
-@media (min-width: 1024px) {
+@layer components {
     .glide__arrow_override {
-        display: block;
+        display: none;
     }
+    
+    .sp-bg {
+        background-color: red;
+        color: green;
+    }
+    
+    .container.con-blog {
+        max-width: 1200px;
+    }
+    
+    @media (min-width: 1024px) {
+        .glide__arrow_override {
+            display: block;
+        }
+    }
+    
 }

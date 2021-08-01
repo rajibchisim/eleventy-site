@@ -1,28 +1,24 @@
 ---
+excerpt: Far far away, behind the word mountains, far from the countries Vokalia
+  and Consonantia, there live the blind texts. Separated they live in
+  Bookmarksgrove right at the coast of the Semantics, a large language ocean. A
+  small river named Duden flows by their place and supplies it with the
+  necessary regelialia. It is a paradisematic country, in which roasted parts of
+  sentences fly into your mouth.
 draft: true
 title: Your eyes can deceive you. Don't trust them
 slug: second
 author: rajib
 permalink: /blogs/{{ title | slug }}/
 date: 2021-06-08T14:59:58.454Z
-tags:
-  - Tags
-excerpt: Far far away, behind the word mountains, far from the countries
-  Vokalia and Consonantia, there live the blind texts. Separated they live in
-  Bookmarksgrove right at the coast of the Semantics, a large language ocean. A
-  small river named Duden flows by their place and supplies it with the
-  necessary regelialia. It is a paradisematic country, in which roasted parts of
-  sentences fly into your mouth.
 categories:
-  - One
-  - Two
-  - Three
+  - travel
 ---
 ## Still, she's got a lot of spirit. I don't know, what do you think?
 
 Look, I ain't in this for your revolution, and I'm not in it for you, Princess. I expect to be well paid. I'm in it for the money. Leave that to me. Send a distress signal, and inform the Senate that all on board were killed.
 
-What?! I suggest you try it again, Luke. This time, let go your conscious self and act on instinct. I call it luck. I can't get involved! __I've got work to do!__ *It's not that I like the Empire, I hate it, but there's nothing I can do about it right now.* It's such a long way from here.
+What?! I suggest you try it again, Luke. This time, let go your conscious self and act on instinct. I call it luck. I can't get involved! **I've got work to do!** *It's not that I like the Empire, I hate it, but there's nothing I can do about it right now.* It's such a long way from here.
 
 ## You're all clear, kid. Let's blow this thing and go home!
 

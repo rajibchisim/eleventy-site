@@ -4,6 +4,13 @@ layout: base
 {% layout 'layouts/archive' %}
 
 {% block main %}
+    <div class="mb-4">
+        {% for category in categories %}
+        <a href="" class="inline-block px-4 py-1 mr-2 text-white uppercase bg-indigo-400 rounded-lg">{{ category }}</a>
+        {% endfor %}
+    </div>
+    <h1 class="mb-3 text-5xl font-extrabold">{{ title }}</h1>
+    <p class="mb-16">Author: {{ author }} | Published at: {{ date | date: "%b %d, %y"}}</p>
     <div class="mb-5 prose text-gray-800 max-w-none">{{ content }}</div>
     <div id="disqus_thread"></div>
     <script>
@@ -27,5 +34,8 @@ layout: base
 {% endblock %}
 
 {% block side %}
-    <h1>About {{ author }}</h1>
+    <div class="p-4 border rounded-lg">
+        <h1 class="mb-4 text-2xl font-bold">About Author</h1>
+        <p><span class="font-semibold capitalize">{{ author }}</span> Joined and contributed.</p>
+    </div>
 {% endblock %}

@@ -2,18 +2,21 @@
 layout: "base"
 pagination: 
   data: collections.blog
-  size: 2
+  size: 5
+  reverse: true
 ---
 {% layout 'layouts/archive' %}
 {% block main %}
 
-    {% assign posts =  collections.blog %}
     {% for post in pagination.items %}
-    <div class="mb-8">
-        <h1 class="mb-2 text-2xl">{{ post.data.title }}</h1>
-        <p class="mb-2"><i class="fa fa-clock-o"></i> <span> {{ post.data.date | date: "%b %d, %y" }} | </span><span>By: {{ post.data.author }}</span></p>
-        <p class="mb-3">{{ post.data.excerpt }}</p>
-        <a class="inline-block px-3 py-1 text-green-500 border border-current" href="/blogs/{{ post.data.slug }}">Read more</a>
+    <div class="mb-8 overflow-hidden border rounded-lg">
+        <img src="/{{ post.data.featured }}?nf_resize=smartcrop&w=800&h=300" class="w-[800px] h-[300px] object-cover" alt="">
+        <div class="p-4">
+            <h1 class="my-3 text-2xl font-bold">{{ post.data.title }}</h1>
+            <p class="mb-3"><i class="fa fa-clock-o"></i> <span> {{ post.data.date | date: "%b %d, %y" }} | </span><span>By: {{ post.data.author }}</span></p>
+            <p class="mb-4">{{ post.data.excerpt }}</p>
+            <a class="inline-block px-3 py-1 text-green-500 border border-current" href="/blogs/{{ post.data.slug }}">Read more</a>
+        </div>
     </div>
     {% endfor %}
     
@@ -31,18 +34,20 @@ pagination:
 {% block side %}
 
     {% assign bloglinksByMonth =  collections.blogsGroupedByMonth %}
-    <h1 class="mb-3 text-2xl">Blogs by month</h1>
-    <ul>
-        {% for blogMonth in bloglinksByMonth reversed %}
-        <li class="mb-3">
-            <h1 class="text-xl">{{ blogMonth.name | date: "%B, %Y"}}</h1>
-            <ul class="ml-2">
-                {% for post in blogMonth.posts %}
-                <li><a href="{{ post.url }} ">{{ post.title }}</a></li>
-                {% endfor %}
-            </ul>
-        </li>
-        {% endfor %}
-    </ul>
+    <div class="p-4 border rounded-lg">
+        <h1 class="mb-3 text-2xl font-semibold">Blogs by month</h1>
+        <ul>
+            {% for blogMonth in bloglinksByMonth reversed %}
+            <li class="mb-5">
+                <h1 class="mb-2 text-xl uppercase">{{ blogMonth.name | date: "%B, %Y"}}</h1>
+                <ul class="ml-2">
+                    {% for post in blogMonth.posts %}
+                    <li><a href="{{ post.url }} "><i class="mr-2 fa fa-arrow-right" aria-hidden="true"></i>{{ post.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 
 {% endblock %}

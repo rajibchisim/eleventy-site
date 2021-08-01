@@ -10,17 +10,15 @@ excerpt: But I must explain to you how all this mistaken idea of denouncing
   know.
 author: rajib chisim
 date: 2021-05-23T18:06:32.803Z
-tags:
-  - created
-  - from
 categories:
-  - blog
+  - computer
+  - css
 ---
-# Too much work. Let's burn it and say we dumped it in the sewer.
+## Too much work. Let's burn it and say we dumped it in the sewer.
 
 No! The cat shelter's on to me. Bender, this is Fry's decision… and he made it wrong. So it's time for us to interfere in his life. And I'm his friend Jesus. Bender, I didn't know you liked cooking. That's so cute.
 
-__ don't know what you did, Fry, but once again, you screwed up!__ *Now all the planets are gonna start cracking wise about our mamas.* I'll tell them you went down prying the wedding ring off his cold, dead finger.
+ **don't know what you did, Fry, but once again, you screwed up!** *Now all the planets are gonna start cracking wise about our mamas.* I'll tell them you went down prying the wedding ring off his cold, dead finger.
 
 ## No, of course not. It was… uh… porno. Yeah, that's it.
 

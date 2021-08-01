@@ -25,12 +25,12 @@
                         <h4 class="mb-3 text-xl">Recent Posts</h4>
                         {% for article in recentPosts limit: 3 %}
                         <div class="flex mb-3">
-                            <a href="#" class="flex-shrink-0">
+                            <a href="/blogs/{{ article.slug }}" class="flex-shrink-0">
                                 <img src="/{{ article.featured | url | append: '?nf_resize=smartcrop&w=96&h=80' }}" loading="lazy" class="w-24 h-20" alt="">
                             </a>
                             <div class="ml-3">
                                 <h5>
-                                    <a href="#">{{ article.title }}</a>
+                                    <a href="/blogs/{{ article.slug }}">{{ article.title }}</a>
                                 </h5>
                                 <span class="text-sm text-gray-500">{{ article.date | date: "%a, %b %d, %Y" }}</span>
                             </div>

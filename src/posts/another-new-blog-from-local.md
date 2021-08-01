@@ -11,12 +11,10 @@ author: rajib chsim
 date: 2021-05-25T12:20:38.912Z
 featured: assets/uploads/blog/designecologist-pmh0uog1vle-unsplash.jpg
 categories:
-  - one
-category:
   - computer
   - travel
 ---
-# Dear God, they'll be killed on our doorstep! And there's no trash pickup until January 3rd.
+## Dear God, they'll be killed on our doorstep! And there's no trash pickup until January 3rd.
 
 But I know you in the future. I cleaned your poop. Good news, everyone! There's a report on TV with some very bad news! Oh no! The professor will hit me! But if Zoidberg 'fixes' it… then perhaps gifts!
 
