@@ -16,7 +16,7 @@ publish_mode: editorial_workflow
 collections:
   - label: Blog categories
     name: category
-    folder: src/_data/categories/
+    folder: src/categories/
     create: true
     editor:
       preview: false
@@ -27,6 +27,10 @@ collections:
       - label: Slug
         name: slug
         widget: string
+      - label: Excerpt
+        name: excerpt
+        widget: string
+        required: false
         
   - label: "Blog"
     name: "blog"
@@ -49,7 +53,7 @@ collections:
         choose_url: true
         media_folder: ../../assets/uploads/blog
         public_folder: assets/uploads/blog
-      - { label: 'Category', name: 'categories', required: false, multiple: true, widget: 'relation', collection: 'category', search_fields: ['title'], value_field: 'slug', display_fields: ['title']}
+      - { label: 'Category', name: 'tags', required: false, multiple: true, widget: 'relation', collection: 'category', search_fields: ['title'], value_field: 'slug', display_fields: ['title']}
       
   - label: "Settings"
     name: "settings"

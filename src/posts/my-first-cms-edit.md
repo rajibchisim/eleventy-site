@@ -1,17 +1,16 @@
 ---
-draft: true
-title: Too much work. Let's burn it and say we dumped it in the sewer
-slug: first
 excerpt: But I must explain to you how all this mistaken idea of denouncing
   pleasure and praising pain was born and I will give you a complete account of
   the system, and expound the actual teachings of the great explorer of the
   truth, the master-builder of human happiness. No one rejects, dislikes, or
   avoids pleasure itself, because it is pleasure, but because those who do not
   know.
+draft: true
+title: CSS Too much work. Let's burn it and say we dumped it in the sewer
+slug: first
 author: rajib chisim
 date: 2021-05-23T18:06:32.803Z
-categories:
-  - computer
+tags:
   - css
 ---
 ## Too much work. Let's burn it and say we dumped it in the sewer.

@@ -1,0 +1,13 @@
+<div class="p-4 mb-6 border rounded-lg">
+    <h1 class="mb-3 text-2xl font-semibold">Categories</h1>
+    <ul>
+        {% for category in collections.category %}
+            {% assign countTotal = collections[category.data.slug] | size %}
+            {% unless countTotal == 0 %}
+            <li class="mb-5">
+                <li><a href="/blogs/categories/{{ category.data.slug }}/" class="hover:text-blue-400"><i class="mr-2 fa fa-arrow-right" aria-hidden="true"></i>{{ category.data.title }} ({{ countTotal }})</a></li>
+            </li>
+            {% endunless %}
+        {% endfor %}
+    </ul>
+</div>

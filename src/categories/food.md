@@ -1,4 +1,4 @@
 ---
 title: Food
-slug: food-changed
+slug: food
 ---

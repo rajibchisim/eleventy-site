@@ -10,9 +10,9 @@ slug: someslug
 author: rajib chsim
 date: 2021-05-25T12:20:38.912Z
 featured: assets/uploads/blog/designecologist-pmh0uog1vle-unsplash.jpg
-categories:
+tags:
+  - css
   - computer
-  - travel
 ---
 ## Dear God, they'll be killed on our doorstep! And there's no trash pickup until January 3rd.
 

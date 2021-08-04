@@ -11,8 +11,8 @@ slug: second
 author: rajib
 permalink: /blogs/{{ title | slug }}/
 date: 2021-06-08T14:59:58.454Z
-categories:
-  - travel
+tags:
+  - css
 ---
 ## Still, she's got a lot of spirit. I don't know, what do you think?
 

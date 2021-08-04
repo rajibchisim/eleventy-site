@@ -1,6 +1,7 @@
 const now = String(Date.now())
 const yaml = require("js-yaml")
 const blogsGrouped = require('./src_eleventy/BlogsGroupedByDate')
+const categoryPaginationData = require('./src_eleventy/tagPagination')
 var minify = require('html-minifier-terser').minify
 
 
@@ -24,6 +25,7 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addCollection("blogsGroupedByDate", blogsGrouped.byDate);
     eleventyConfig.addCollection("blogsGroupedByMonth", blogsGrouped.byMonth);
     eleventyConfig.addCollection("blogsRecent", blogsGrouped.latest);
+    eleventyConfig.addCollection("categoryPaginationData", categoryPaginationData)
     
     // Copy css to _site directory
     /* eleventyConfig.addWatchTarget('./_tmp/style.css')

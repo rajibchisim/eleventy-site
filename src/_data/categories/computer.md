@@ -1,4 +1,0 @@
----
-title: Computer
-slug: computer
----

@@ -1,0 +1,6 @@
+<div>
+    <a {% if previous %}href="{{ previous }}"{%endif%} 
+        class="inline-block capitalize px-4 py-2 mr-2 bg-blue-400 {% unless previous %}bg-blue-500{% endunless%}">previous</a>
+    <a {% if next %}href="{{ next }}"{%endif%} 
+        class="inline-block capitalize px-4 py-2 bg-blue-400 {% unless next %}bg-blue-800{% endunless%}">Next</a>
+</div>

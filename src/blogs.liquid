@@ -2,7 +2,7 @@
 layout: "base"
 pagination: 
   data: collections.blog
-  size: 5
+  size: 2
   reverse: true
 ---
 {% layout 'layouts/archive' %}
@@ -20,34 +20,16 @@ pagination:
     </div>
     {% endfor %}
     
-    <div>
-        <!-- <p><span class="text-red-400">{{ pagination.href.previous }}</span>{{ pagination.pageNumber }} <span class="text-red-400">{{ pagination.href.next }}</span></p> -->
-        <a {% if pagination.href.previous %}href="{{ pagination.href.previous }}"{%endif%} 
-            class="inline-block capitalize px-4 py-2 mr-2 bg-blue-400 {% unless pagination.href.previous %}bg-blue-500{% endunless%}">previous</a>
-        <a {% if pagination.href.next %}href="{{ pagination.href.next }}"{%endif%} 
-            class="inline-block capitalize px-4 py-2 bg-blue-400 {% unless pagination.href.next %}bg-blue-800{% endunless%}">Next</a>
-    </div>
+    {% render "partials/widget-pagination-links" previous: pagination.href.previous, next: pagination.href.next %}
     
 {% endblock %}
 
 
 {% block side %}
 
+    {% render "partials/widget-category" collections: collections %}
+
     {% assign bloglinksByMonth =  collections.blogsGroupedByMonth %}
-    <div class="p-4 border rounded-lg">
-        <h1 class="mb-3 text-2xl font-semibold">Blogs by month</h1>
-        <ul>
-            {% for blogMonth in bloglinksByMonth reversed %}
-            <li class="mb-5">
-                <h1 class="mb-2 text-xl uppercase">{{ blogMonth.name | date: "%B, %Y"}}</h1>
-                <ul class="ml-2">
-                    {% for post in blogMonth.posts %}
-                    <li><a href="{{ post.url }} "><i class="mr-2 fa fa-arrow-right" aria-hidden="true"></i>{{ post.title }}</a></li>
-                    {% endfor %}
-                </ul>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
+    {% render "partials/widget-blogs-by-month" bloglinksByMonth: bloglinksByMonth %}
 
 {% endblock %}

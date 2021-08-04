@@ -6,7 +6,7 @@ slug: some-draft-slug
 author: rajib chsim
 date: 2021-07-27T06:34:32.729Z
 featured: assets/uploads/blog/sam-albury-oa7mmrxtvzo-unsplash.jpg
-categories:
+tags:
   - css
 ---
 ## Some body text here

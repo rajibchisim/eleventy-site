@@ -1,0 +1,15 @@
+<div class="p-4 border rounded-lg">
+    <h1 class="mb-3 text-2xl font-semibold">Blogs by month</h1>
+    <ul>
+        {% for blogMonth in bloglinksByMonth reversed %}
+        <li class="mb-5">
+            <h1 class="mb-2 text-xl uppercase">{{ blogMonth.name | date: "%B, %Y"}}</h1>
+            <ul class="ml-2">
+                {% for post in blogMonth.posts %}
+                <li><a href="{{ post.url }}" class="hover:text-blue-400"><i class="mr-2 fa fa-arrow-right" aria-hidden="true"></i>{{ post.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

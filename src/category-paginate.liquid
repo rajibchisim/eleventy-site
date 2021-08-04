@@ -1,0 +1,48 @@
+---
+layout: base
+pagination:
+  data: collections.categoryPaginationData
+  size: 1
+  alias: tag
+permalink: "/blogs/categories/{{ tag.tagName }}/{% unless tag.pageNumber == 0 %}{{ tag.pageNumber }}/{% endunless %}"
+---
+
+{% layout "layouts/archive" %}
+
+{% block header %}
+    <div class="px-8 py-8 bg-blue-200 rounded-lg">
+        <h1 class="text-4xl text-center">{{ tag.tagTitle | capitalize }}</h1>
+    </div>
+{% endblock %}
+
+{% block main %}
+    {% for post in  tag.items %}
+        <div class="mb-8 overflow-hidden border rounded-lg">
+            <div class="p-4">
+                <h1 class="my-3 text-2xl font-bold">{{ post.data.title }}</h1>
+                <p class="mb-3"><i class="fa fa-clock-o"></i> <span> {{ post.data.date | date: "%b %d, %y" }} | </span><span>By: {{ post.data.author }}</span></p>
+                <p class="mb-4">{{ post.data.excerpt | truncate: 250, '...' }}</p>
+                <a class="inline-block px-3 py-1 text-green-500 border border-current" href="/blogs/{{ post.data.slug }}">Read more</a>
+            </div>
+        </div>
+    {% endfor %}
+
+    {% if tag.href.previous %}
+        {% if tag.href.previous == 0 %}
+            {% assign linkPrevious = "/blogs/categories/" | append: tag.tagName | append: "/" %}
+        {% else %}
+            {% assign linkPrevious = "/blogs/categories/" | append: tag.tagName | append: "/" | append: tag.href.previous %}
+        {% endif %}
+    {% endif %}
+
+    {% if tag.href.next %}
+        {% assign linkNext = "/blogs/categories/" | append: tag.tagName | append: "/" | append: tag.href.next %}
+    {% endif %}
+
+    {% render "partials/widget-pagination-links" previous: linkPrevious, next: linkNext %}
+{% endblock %}
+
+
+{% block side %}
+    {% render "partials/widget-category" collections: collections %}
+{% endblock %}

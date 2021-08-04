@@ -6,15 +6,14 @@ excerpt: Far far away, behind the word mountains, far from the countries Vokalia
   necessary regelialia. It is a paradisematic country, in which roasted parts of
   sentences fly into your mouth.
 draft: true
-title: I hate yogurt. It's just stuff with bits in. changed today.
+title: CSS I hate yogurt. It's just stuff with bits in. changed today.
 slug: i-hate-yogurt
 author: rajib
 permalink: /blogs/{{ title | slug }}/
 date: 2021-07-24T12:58:13.805Z
 featured: assets/uploads/blog/name-with-spaces.jpeg
-categories:
+tags:
   - css
-  - computer
 ---
 ## I hate yogurt. It's just stuff with bits in.
 
