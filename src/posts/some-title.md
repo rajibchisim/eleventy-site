@@ -1,7 +1,7 @@
 ---
 excerpt: Some description for some slug
 draft: false
-title: Some title
+title: Blog title is here
 slug: some-draft-slug
 author: rajib chsim
 date: 2021-07-27T06:34:32.729Z
